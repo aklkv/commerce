@@ -12,6 +12,13 @@ const isSwell = provider === 'swell'
 const isVendure = provider === 'vendure'
 
 module.exports = withCommerceConfig({
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   trailingSlash: true,
   commerce,
   i18n: {

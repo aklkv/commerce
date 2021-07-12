@@ -4,8 +4,12 @@ import 'keen-slider/keen-slider.min.css'
 
 import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
+import Amplify from 'aws-amplify';
 import { Head } from '@components/common'
 import { ManagedUIContext } from '@components/ui/context'
+
+import config from '../aws-exports';
+Amplify.configure({...config, ssr: true });
 
 const Noop: FC = ({ children }) => <>{children}</>
 
